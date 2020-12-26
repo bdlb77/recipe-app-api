@@ -8,7 +8,7 @@ class AdminSiteTests(TestCase):
     def setUp(self):
         """Add new User, Have them logged in"""
         self.client = Client()
-        self.admin_user = get_user_model().objects.create_super_user(
+        self.admin_user = get_user_model().objects.create_superuser(
           email="test@test.com",
           password="test123"
         )
