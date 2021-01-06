@@ -9,15 +9,15 @@ class AdminSiteTests(TestCase):
         """Add new User, Have them logged in"""
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
-          email="test@test.com",
-          password="test123"
+            email="test@test.com",
+            password="test123"
         )
         # user client functions to log in user w/ auth
         self.client.force_login(self.admin_user)
         self.user = get_user_model().objects.create_user(
-          email="user@test.com",
-          password="123test",
-          name="Jon Doe"
+            email="user@test.com",
+            password="123test",
+            name="Jon Doe"
         )
 
     def test_users_listed(self):
